@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.Delayed;
+
 public class Tokopedia {
     private final WebDriver driver;
 
@@ -16,8 +18,11 @@ public class Tokopedia {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//input[@placeholder='Cari di Tokopedia']")
+    @FindBy(xpath = "//*[@id=\"header-main-wrapper\"]/div[2]/div[2]/div[1]/div/div/div/input")
     WebElement searchInput;
+
+    @FindBy(xpath = "//*[@id=\"header-main-wrapper\"]/div[2]/div[2]/div[1]/div/div/div/button")
+    WebElement btnSearch;
 
     @FindBy(xpath = "//*[@id=\"zeus-root\"]/div/div[2]/div/div[2]/div[2]/span/div/span")
     WebElement getTxtJumlahProduk;
@@ -27,12 +32,14 @@ public class Tokopedia {
     //Page Object
 
     public void searchProduct(){
+
         searchInput.sendKeys("Televisi", Keys.RETURN);
-        System.out.println("berhasil input");
+
+        System.out.println("Berhasil input");
     }
 
     public String getTxtJumlahProduk(){
-        System.out.println("berhasil menampilkan jumlah produk tersedia");
+        System.out.println("Berhasil menampilkan jumlah produk tersedia");
         return getTxtJumlahProduk.getAttribute("Menampilkan 1 - 60 barang dari total 7.1jt+ untuk \"televisi\"");
 
     }

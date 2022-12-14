@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Chrome implements DriverStrategy {
     public WebDriver setStrategy() {
-        System.setProperty("webdriver.chrome.driver", "D:\\ChromeDriver\\chromedriver.exe");        ChromeOptions options = new ChromeOptions();
+        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32 (1)\\chromedriver.exe");        ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("useAutomationExtension", false);
         options.addArguments("--no-sandbox");
 
